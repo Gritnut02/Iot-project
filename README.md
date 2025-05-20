@@ -3,9 +3,9 @@ AltoTech
 Problem - IoT Platform for Indoor Air Quality Data
 Imagine you are an IoT engineer who is tasked with building a miniature IoT platform that reads real-time data from IAQ sensors (indoor air quality sensor), detects anomalies from the sensors, and notify the users of the anomalies.
 
+
 📌 Sub-Problem 1 – IAQ Sensor Study & Recommendation
-Research and identify the most suitable CO₂-temperature-humidity sensor brand for your platform. Survey at least 5 current IAQ sensor options in the market and make a comprehensive comparison in terms of important factors to consider (like price, sensor's technical specs, accuracy, power, Python-friendly interfaces) and then defend a single pick (or combo). 
-IAQ Sensor Comparison Table 
+Research and identify the most suitable CO₂-temperature-humidity sensor brand for your platform. 
 | Sensor Name           | CO₂ Range (ppm)           | Accuracy (CO₂)           | Built-in T/H?        | Interface | Power                          | Price (USD) | Python Support | Notes                                                               |
 | --------------------- | ------------------------- | ------------------------ | -------------------- | --------- | ------------------------------ | ----------- | -------------- | ------------------------------------------------------------------- |
 | **SCD30** (Sensirion) | 0–40,000 (400–10k usable) | ±(30 ppm + 3%)           | ✅ Yes                | I²C, UART | 3.3–5V, \~19–75mA              | \~\$50      | ✅ Yes          | High accuracy, professional use, auto-compensation, well-documented |
@@ -37,13 +37,12 @@ In short, I picked the SCD30 because it combines accuracy, ease of use, and prof
 | 🛠️ **Professional Use Ready** | Used in certified IAQ monitors (WELL™, RESET®), making it ideal for real deployment   |
 | 📚 **Well-Documented**         | Excellent datasheets, sample code, open-source drivers, easy integration              |
 
-🧠 What I Learned from Choosing This Sensor
-Making this decision wasn’t just about hardware — it was about thinking like an engineer:
-Choosing accuracy over cheap alternatives
-Thinking ahead for scalability and maintenance
-Making sure the sensor fits both the technical and practical goals of the project
-In a way, the SCD30 helped me think about quality, not just cost — and that mindset will help me in future projects too. 
-The Sensirion SCD30 gave me everything I needed: accuracy, reliability, and ease of integration. I believe it's a great choice for students or professionals building any serious IAQ monitoring system.
+What I Learned from Choosing This Sensor
+Choosing the SCD30 wasn’t just about picking a good piece of hardware — it actually taught me how to think more like an engineer. I realized that making technical decisions isn’t only about finding the cheapest option, but about thinking long-term: how accurate the data needs to be, how scalable the system is, and how much time I’ll save or lose in maintenance later on.
+
+The SCD30 showed me the value of investing in quality. It gave me confidence that the data my system is producing is reliable, and that the sensor can be integrated easily without unnecessary complexity. That kind of thinking — prioritizing accuracy, reliability, and ease of use — is something I’ll carry into future projects, both as a student and a future professional.
+
+In the end, the Sensirion SCD30 gave me everything I was looking for: accuracy, trustworthiness, and development speed. Whether you're a student building your first IoT platform or a professional designing a real-world system, I believe this sensor is a smart and future-proof choice.
 
 Even though it’s a bit more expensive than some alternatives, I see it as an investment in building a better and more trustworthy system. Whether this system is used in a home, classroom, or office, the data it collects matters — and with the SCD30, I know that data is solid.
 
@@ -60,6 +59,7 @@ For applications that don’t need exact CO₂ values but instead focus on trend
 | **SCD41**         | You need **ultra-low power** (battery) and can accept <5000 ppm range   |
 | **MH-Z19B**       | Budget is limited and you don’t mind **external temp/humidity sensors** |
 | **CCS811/BME680** | You only need **trends**, not precise CO₂, and want cheap sensors       |
+
 
 📌 Sub-Problem 2 – Sensor Data Simulation
 Since we don't provide real sensors for this problem, please write a Python code to emulate 15 mocked IAQ sensors which publish the data into RabbitMQ message bus every 15 seconds. The message data should contain all necessary IoT data points including temperature, relative humidity, and CO₂ concentration.
